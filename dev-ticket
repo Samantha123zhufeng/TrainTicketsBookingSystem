@@ -1,0 +1,63 @@
+//车票管理类系统 
+#ifndef SJTU_TICKET_HPP
+#define SJTU_TICKET_HPP
+#include<exception.hpp>
+#include<timer.hpp>
+namespace sjtu{
+	class ticket{
+	private:
+		string trainId;//所属车次
+		string userId;//用户ID
+		string userName;//用户名 
+		string departStation;//起点站 
+		string stopStation;//终点站 
+		timer departTime;//出发时间 
+		timer stopTime;//到达时间 
+		int seatType;//座位类型 
+		int price;//票价 
+		
+	public:
+		ticket(const string &_train,const string &_userId,const string &_userName,const string &_departStation,const string &_stopStaion,const timer &_departTime,const timer &_stopTime,int _seatType,int _price): 
+		trainId(_train),userId(_userId),userName(_userName),departStation(_departStation),stopStation(_stopStation),departTime(_departTime),stopTime(_stopTime),seatType(_seatType),price(_price) 
+		
+		
+	};
+	
+	string getTrain() const {
+		return trainId;
+	}
+	
+	string getUserId() const{
+		return userId; 
+	}
+	
+	string getUserName() const{
+		return userName;
+	}
+	
+	string getDepartStation() const{
+		return departStation;
+	}
+	
+	string getStopStation() const{
+		return stopStation;
+	}
+	
+	timer getDepartTime() const{
+		return departTime;
+	}
+	
+	timer getStopTime()	const{
+		return stopTime;
+	}
+	
+	int getType() const{
+		return seatType;
+	}
+	
+	int getPrice()	const{
+		return price;
+	}
+
+}
+#endif/*station_hpp/
